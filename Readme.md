@@ -1,9 +1,14 @@
 1969 [![Status Zero][status-zero]][andivionian-status-classifier] [![Appveyor build status][appveyor-status]][appveyor] [![Travis build status][travis-status]][travis]
-==========
+====
 
 > The Moon landing never happened, but we went to the Mars instead.
 
 In 1969, you control the robotic mining mission on Mars.
+
+Documentation
+-------------
+
+There's a [game design document][docs-game-design] available.
 
 Build
 -----
@@ -68,6 +73,7 @@ All the source code of this project is distributed under the MIT license. Check
 All the accompanying image files are licensed under a [Creative Commons
 Attribution 4.0 International License][cc-by-license].
 
+[docs-game-design]: docs/game-design.md
 [license]: License.md
 
 [andivionian-status-classifier]: https://github.com/ForNeVeR/andivionian-status-classifier#status-zero-
