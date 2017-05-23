@@ -1,0 +1,7 @@
+language: csharp
+mono: latest
+solution: MarsBaseBuilder.sln
+install:
+    - nuget restore
+script:
+    - xbuild /p:Configuration=Release MarsBaseBuilder.sln
