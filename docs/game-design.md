@@ -33,6 +33,6 @@ Game Goal
 Goal of every (basic) level is to reach some level of the base and to reach some
 fixed power production level.
 
-[concept]: concept.svg
-
 [20kly]: https://www.jwhitham.org/20kly/
+
+[concept]: https://github.com/ForNeVeR/1969/blob/master/1-game-design/docs/concept.svg

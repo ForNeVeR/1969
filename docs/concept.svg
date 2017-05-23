@@ -9,9 +9,9 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="210mm"
-   height="297mm"
-   viewBox="0 0 210 297"
+   width="118.59663mm"
+   height="104.04426mm"
+   viewBox="0 0 118.37073 104.04426"
    version="1.1"
    id="svg8"
    inkscape:version="0.92.1 r15371"
@@ -26,8 +26,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.4"
-     inkscape:cx="333.5199"
-     inkscape:cy="742.47789"
+     inkscape:cx="173.26399"
+     inkscape:cy="251.54929"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -35,7 +35,12 @@
      inkscape:window-height="961"
      inkscape:window-x="1272"
      inkscape:window-y="46"
-     inkscape:window-maximized="1" />
+     inkscape:window-maximized="1"
+     viewbox-width="209.6"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
   <metadata
      id="metadata5">
     <rdf:RDF>
@@ -51,7 +56,8 @@
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
-     id="layer1">
+     id="layer1"
+     transform="translate(-42.401046,-63.064222)">
     <rect
        style="fill:#550000;fill-opacity:0.50196078;stroke:#000000;stroke-width:0.26458332;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="rect4485"
@@ -314,7 +320,7 @@
          style="text-align:center;text-anchor:middle;fill:#e3dbdb;stroke-width:0.23801462px">TERRAIN</tspan><tspan
          sodipodi:role="line"
          x="144.46408"
-         y="109.31673"
+         y="108.73555"
          style="text-align:center;text-anchor:middle;fill:#e3dbdb;stroke-width:0.23801462px"
          id="tspan5066">(must be terraformed)</tspan></text>
   </g>
