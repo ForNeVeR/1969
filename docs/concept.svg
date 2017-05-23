@@ -59,6 +59,13 @@
      id="layer1"
      transform="translate(-42.401046,-63.064222)">
     <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:0.26500002;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect5068"
+       width="120.90714"
+       height="106.91057"
+       x="42.333332"
+       y="63.788689" />
+    <rect
        style="fill:#550000;fill-opacity:0.50196078;stroke:#000000;stroke-width:0.26458332;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="rect4485"
        width="117.55059"
