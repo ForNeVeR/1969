@@ -35,4 +35,4 @@ fixed power production level.
 
 [20kly]: https://www.jwhitham.org/20kly/
 
-[concept]: https://github.com/ForNeVeR/1969/blob/master/1-game-design/docs/concept.svg
+[concept]: https://cdn.rawgit.com/ForNeVeR/1969/180f845d/docs/concept.svg
