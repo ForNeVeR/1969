@@ -57,6 +57,8 @@
     <Compile Include="AssemblyInfo.fs" />
     <None Include="App.config" />
     <Content Include="packages.config" />
+    <Compile Include="GameUnit.fs" />
+    <Compile Include="GameLogic.fs" />
     <Compile Include="MarsBaseBuilderGame.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
