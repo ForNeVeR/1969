@@ -6,14 +6,16 @@ open Microsoft.Xna.Framework
 open Xunit
 
 open MarsBaseBuilder
+open MarsBaseBuilder.Measures
 
-let minute = TimeSpan.FromMinutes(1.0)
+let minute = TimeSpan.FromMinutes 1.0
 let gameMinute = GameTime(minute, minute)
 
 [<Fact>]
 let ``New mission should include a Base`` () =
     let state = GameLogic.newMission
-    Assert.Contains(Base, state.units)
+    Assert.True(Map.containsKey Base state.units)
+    Assert.Equal(gp 0 0, Map.find Base state.units)
 
 [<Fact>]
 let ``Update should be callable`` () =

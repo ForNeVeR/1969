@@ -2,10 +2,12 @@
 
 open Microsoft.Xna.Framework
 
+open MarsBaseBuilder.Measures
+
 type GameState = {
-    units : Set<GameUnit>
+    units : Map<GameUnit, Position>
 }
 
-let newMission = { units = Set([|Base|]) }
+let newMission = { units = Map([|Base, gp 0 0|]) }
 
 let update (state : GameState) (timeDelta : GameTime) : GameState = state

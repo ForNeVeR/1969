@@ -52,7 +52,9 @@
   <ItemGroup>
     <Compile Include="AssemblyInfo.fs" />
     <Compile Include="GameLogicTests.fs" />
+    <Compile Include="MeasuresTests.fs" />
     <Content Include="packages.config" />
+    <Compile Include="RendererTests.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MonoGame.Framework">
