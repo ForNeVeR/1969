@@ -1,7 +1,6 @@
 ﻿module MarsBaseBuilder.Renderer
 
 open Microsoft.Xna.Framework
-open Microsoft.Xna.Framework.Graphics
 
 open MarsBaseBuilder.Measures
 
@@ -10,8 +9,8 @@ type DrawCommand =
     | Rectangle of a : ScreenPoint * b : ScreenPoint
 
 let internal mapToScreenPoint (p : Position) : ScreenPoint =
-    { x = 400<screenPx> + (p.x * 1<screenPx/gameUnit>)
-      y = 300<screenPx> + (p.y * 1<screenPx/gameUnit>) }
+    { x = 400<screenPx> + (int p.x) * 1<screenPx>
+      y = 300<screenPx> + (int p.y) * 1<screenPx> }
 
 let internal offset x y (sp : ScreenPoint) =
     { sp with x = sp.x + x; y = sp.y + y }
@@ -29,8 +28,10 @@ let commands (state : GameLogic.GameState) : ResizeArray<DrawCommand> =
     list
 
 let marsColor = Color.IndianRed
-let apply (graphics : GraphicsDevice) (commands : ResizeArray<DrawCommand>) : unit =
+let apply (context : GraphicsContext) (commands : ResizeArray<DrawCommand>) : unit =
+    context.BeginDraw()
     for c in commands do
         match c with
-        | Background -> graphics.Clear marsColor
-        | Rectangle (a, b) -> () // TODO[F]: Draw a rectangle
+        | Background -> context.Clear marsColor
+        | Rectangle (a, b) -> context.Rectangle(a, b)
+    context.EndDraw()

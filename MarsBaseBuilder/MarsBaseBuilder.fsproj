@@ -60,6 +60,7 @@
     <Compile Include="GameUnit.fs" />
     <Compile Include="Measures.fs" />
     <Compile Include="GameLogic.fs" />
+    <Compile Include="GraphicsContext.fs" />
     <Compile Include="Renderer.fs" />
     <Compile Include="MarsBaseBuilderGame.fs" />
     <Compile Include="Program.fs" />
