@@ -1,5 +1,6 @@
 ﻿module MarsBaseBuilder.Tests.RendererTests
 
+open Foq
 open Xunit
 
 open MarsBaseBuilder
@@ -35,3 +36,42 @@ let ``Base drawn radius is 5 px`` () =
     let (Renderer.Rectangle(a, b)) = Renderer.draw (gp 5 5) Base
     Assert.Equal(10<screenPx>, b.x - a.x)
     Assert.Equal(10<screenPx>, b.y - a.y)
+
+[<Fact>]
+let ``apply calls Start and Stop methods on context`` () =
+    let context =
+        Mock<IGraphicsContext>()
+            .Setup(fun c -> <@ c.BeginDraw() @>).Returns(())
+            .Setup(fun c -> <@ c.EndDraw() @>).Returns(())
+            .Create()
+    
+    let commands = ResizeArray()
+    Renderer.apply context commands
+
+    Mock.Verify(<@ context.BeginDraw() @>, once)
+    Mock.Verify(<@ context.EndDraw() @>, once)
+
+[<Fact>]
+let ``Background should clear the screen`` () =
+    let context =
+        Mock<IGraphicsContext>()
+            .SetupMethod(fun c -> <@ c.Clear @>).Returns(())
+            .Create()
+    
+    let commands = ResizeArray([| Renderer.Background |])
+    Renderer.apply context commands
+
+    Mock.Verify(<@ context.Clear @>, once)
+
+[<Fact>]
+let ``Rectangle drawing should be proxied to context`` () =
+    let context =
+        Mock<IGraphicsContext>()
+            .SetupMethod(fun c -> <@ c.Rectangle @>).Returns(())
+            .Create()
+    
+    let p = sp 10 10
+    let commands = ResizeArray([| Renderer.Rectangle(p, p) |])
+    Renderer.apply context commands
+
+    Mock.Verify(<@ context.Rectangle(p, p) @>, once)

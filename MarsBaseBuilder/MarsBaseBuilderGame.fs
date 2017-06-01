@@ -12,7 +12,7 @@ type MarsBaseBuilderGame() as this =
 
     let mutable mission = GameLogic.newMission
 
-    override this.Draw(gameTime) =        
+    override this.Draw(gameTime) =
         render.Value (Renderer.commands mission)
         base.Draw(gameTime)
 
