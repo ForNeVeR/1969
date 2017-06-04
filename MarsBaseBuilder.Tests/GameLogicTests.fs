@@ -15,7 +15,7 @@ let gameMinute = GameTime(minute, minute)
 let ``New mission should include a Base`` () =
     let state = GameLogic.newMission
     Assert.True(Map.containsKey Base state.units)
-    Assert.Equal(gp 0 0, Map.find Base state.units)
+    Assert.Equal(pp 0 0, Map.find Base state.units)
 
 [<Fact>]
 let ``Update should be callable`` () =

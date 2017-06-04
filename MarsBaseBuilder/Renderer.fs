@@ -8,14 +8,14 @@ type DrawCommand =
     | Background
     | Rectangle of a : ScreenPoint * b : ScreenPoint
 
-let internal mapToScreenPoint (p : Position) : ScreenPoint =
-    { x = 400<screenPx> + (int p.x) * 1<screenPx>
-      y = 300<screenPx> + (int p.y) * 1<screenPx> }
+let internal mapToScreenPoint (p : PhysicalPoint) : ScreenPoint =
+    { x = 400<px> + (int p.x) * 1<px>
+      y = 300<px> + (int p.y) * 1<px> }
 
 let internal offset x y (sp : ScreenPoint) =
     { sp with x = sp.x + x; y = sp.y + y }
 
-let baseRadius = 5<screenPx>
+let baseRadius = 5<px>
 let internal draw coords = function
     | Base -> 
         let pos = mapToScreenPoint coords

@@ -10,17 +10,17 @@ let mission = GameLogic.newMission
 
 [<Fact>]
 let ``mapToScreenPoint maps zero to 400, 300`` () =
-    Assert.Equal({ x = 400<screenPx>; y = 300<screenPx> }, Renderer.mapToScreenPoint (gp 0 0))
+    Assert.Equal({ x = 400<px>; y = 300<px> }, Renderer.mapToScreenPoint (pp 0 0))
 
 [<Fact>]
 let ``mapToScreenPoint maps as x + 400, y + 300`` () =
-    let p = gp 100 200
-    Assert.Equal({ x = 400<screenPx>; y = 300<screenPx> }, Renderer.mapToScreenPoint (gp 0 0))
+    let p = pp 100 200
+    Assert.Equal({ x = 400<px>; y = 300<px> }, Renderer.mapToScreenPoint (pp 0 0))
 
 [<Fact>]
 let ``offset should move the screen point`` () =
     let p = sp 10 15
-    Assert.Equal(Renderer.offset 5<screenPx> -5<screenPx> p, sp 15 10)
+    Assert.Equal(Renderer.offset 5<px> -5<px> p, sp 15 10)
 
 [<Fact>]
 let ``Background should be drawn always`` () =
@@ -33,9 +33,9 @@ let ``Base resolves to rectangle`` () =
 
 [<Fact>]
 let ``Base drawn radius is 5 px`` () =
-    let (Renderer.Rectangle(a, b)) = Renderer.draw (gp 5 5) Base
-    Assert.Equal(10<screenPx>, b.x - a.x)
-    Assert.Equal(10<screenPx>, b.y - a.y)
+    let (Renderer.Rectangle(a, b)) = Renderer.draw (pp 5 5) Base
+    Assert.Equal(10<px>, b.x - a.x)
+    Assert.Equal(10<px>, b.y - a.y)
 
 [<Fact>]
 let ``apply calls Start and Stop methods on context`` () =

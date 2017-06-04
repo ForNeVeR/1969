@@ -1,22 +1,22 @@
 ﻿module MarsBaseBuilder.Measures
 
 [<Measure>]
-type gameUnit
+type dm
 
 [<Measure>]
-type screenPx
+type px
 
 [<Struct>]
-type Position = {
-    x : int<gameUnit>
-    y : int<gameUnit>
+type PhysicalPoint = {
+    x : int<dm>
+    y : int<dm>
 }
 
 [<Struct>]
 type ScreenPoint = {
-    x : int<screenPx>
-    y : int<screenPx>
+    x : int<px>
+    y : int<px>
 }
 
-let gp (x : int) (y : int) : Position = { x = x * 1<gameUnit>; y = y * 1<gameUnit> }
-let sp (x : int) (y : int) : ScreenPoint = { x = x * 1<screenPx>; y = y * 1<screenPx> }
+let pp (x : int) (y : int) : PhysicalPoint = { x = x * 1<dm>; y = y * 1<dm> }
+let sp (x : int) (y : int) : ScreenPoint = { x = x * 1<px>; y = y * 1<px> }
