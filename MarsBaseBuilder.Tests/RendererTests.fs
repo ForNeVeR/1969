@@ -38,23 +38,9 @@ let ``Base drawn radius is 5 px`` () =
     Assert.Equal(10<px>, b.y - a.y)
 
 [<Fact>]
-let ``apply calls Start and Stop methods on context`` () =
-    let context =
-        Mock<IGraphicsContext>()
-            .Setup(fun c -> <@ c.BeginDraw() @>).Returns(())
-            .Setup(fun c -> <@ c.EndDraw() @>).Returns(())
-            .Create()
-    
-    let commands = ResizeArray()
-    Renderer.apply context commands
-
-    Mock.Verify(<@ context.BeginDraw() @>, once)
-    Mock.Verify(<@ context.EndDraw() @>, once)
-
-[<Fact>]
 let ``Background should clear the screen`` () =
     let context =
-        Mock<IGraphicsContext>()
+        Mock<IDrawingContext>()
             .SetupMethod(fun c -> <@ c.Clear @>).Returns(())
             .Create()
     
@@ -66,7 +52,7 @@ let ``Background should clear the screen`` () =
 [<Fact>]
 let ``Rectangle drawing should be proxied to context`` () =
     let context =
-        Mock<IGraphicsContext>()
+        Mock<IDrawingContext>()
             .SetupMethod(fun c -> <@ c.Rectangle @>).Returns(())
             .Create()
     

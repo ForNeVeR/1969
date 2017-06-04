@@ -28,10 +28,8 @@ let commands (state : GameLogic.GameState) : ResizeArray<DrawCommand> =
     list
 
 let marsColor = Color.IndianRed
-let apply (context : IGraphicsContext) (commands : ResizeArray<DrawCommand>) : unit =
-    context.BeginDraw()
+let apply (draw : IDrawingContext) (commands : ResizeArray<DrawCommand>) : unit =
     for c in commands do
         match c with
-        | Background -> context.Clear marsColor
-        | Rectangle (a, b) -> context.Rectangle(a, b)
-    context.EndDraw()
+        | Background -> draw.Clear marsColor
+        | Rectangle (a, b) -> draw.Rectangle(a, b)

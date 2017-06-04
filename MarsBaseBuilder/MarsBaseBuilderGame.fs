@@ -8,12 +8,12 @@ type MarsBaseBuilderGame() as this =
     inherit Game()
 
     let graphicsContext = lazy (new GraphicsContext(this.GraphicsDevice))
-    let render = lazy (Renderer.apply graphicsContext.Value)
 
     let mutable mission = GameLogic.newMission
 
     override this.Draw(gameTime) =
-        render.Value (Renderer.commands mission)
+        use draw = graphicsContext.Value.BeginDraw()
+        Renderer.apply draw (Renderer.commands mission)
         base.Draw(gameTime)
 
     override this.Update(gameTime) =
