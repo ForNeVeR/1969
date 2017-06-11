@@ -18,6 +18,12 @@ let ``New mission should include a Base`` () =
     Assert.Equal(pp 0 0, Map.find Base state.units)
 
 [<Fact>]
+let ``New mission should include a Builder`` () =
+    let state = GameLogic.newMission
+    Assert.True(Map.containsKey Builder state.units)
+    Assert.Equal(pp 30 30, Map.find Builder state.units)
+
+[<Fact>]
 let ``Update should be callable`` () =
     let state = GameLogic.newMission
     let state' = GameLogic.update state gameMinute

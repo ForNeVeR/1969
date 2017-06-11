@@ -1,3 +1,3 @@
 ﻿namespace MarsBaseBuilder
 
-type GameUnit = Base
+type GameUnit = Base | Builder
