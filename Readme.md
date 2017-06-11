@@ -1,4 +1,4 @@
-1969 [![Status Zero][status-zero]][andivionian-status-classifier] [![Appveyor build status][appveyor-status]][appveyor] [![Travis build status][travis-status]][travis]
+﻿1969 [![Status Zero][status-zero]][andivionian-status-classifier] [![Appveyor build status][appveyor-status]][appveyor] [![Travis build status][travis-status]][travis]
 ====
 
 > The Moon landing never happened, but we went to the Mars instead.
@@ -62,7 +62,16 @@ $ cd MarsBaseBuilder/bin/Debug
 $ mono ./MarsBaseBuilder.exe
 ```
 
-### Program arguments
+Textures
+--------
+
+There're processed textures in the game repository. Although, if you want to
+process the textures again, run the following command (requires
+[imagemagick][]):
+
+```console
+$ magick convert textures/builder.svg -transparent white MarsBaseBuilder/resources/builder.png
+```
 
 License
 -------
@@ -79,6 +88,7 @@ Attribution 4.0 International License][cc-by-license].
 [andivionian-status-classifier]: https://github.com/ForNeVeR/andivionian-status-classifier#status-zero-
 [appveyor]: https://ci.appveyor.com/project/ForNeVeR/1969/branch/master
 [cc-by-license]: https://creativecommons.org/licenses/by/4.0/
+[imagemagick]: https://www.imagemagick.org/script/index.php
 [mono]: http://www.mono-project.com/
 [nuget]: https://www.nuget.org/
 [travis]: https://travis-ci.org/ForNeVeR/1969
