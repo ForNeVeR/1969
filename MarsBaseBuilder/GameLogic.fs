@@ -9,8 +9,8 @@ type GameState = {
 }
 
 let private units = [| 
-    Base, originTransform; 
-    Builder, {originTransform with position = pp 30 30; rotation = deg 30.0f}
+    Base, origin; 
+    Builder, {origin with position = pp 30 30; rotation = deg 30.0f}
     |]
 
 let newMission = { 

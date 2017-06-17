@@ -47,4 +47,4 @@ let deg2rad (angle : float32<deg>) : float32<rad> =
     let coeff = pi/180.0f<deg>
     angle*coeff
 
-let originTransform : PhysicalTransform = {position = (pp 0 0); rotation = deg 0.0f}
+let origin : PhysicalTransform = {position = (pp 0 0); rotation = deg 0.0f}

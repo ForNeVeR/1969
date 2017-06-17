@@ -36,14 +36,14 @@ let ``Background should be drawn always`` () =
 
 [<Fact>]
 let ``Base drawn radius is 5 px`` () =
-    let transform = {originTransform with position = pp 5 5}
+    let transform = {origin with position = pp 5 5}
     let (Renderer.Rectangle(a, b)) = Renderer.draw textures transform Base
     Assert.Equal(10<px>, b.x - a.x)
     Assert.Equal(10<px>, b.y - a.y)
 
 [<Fact>]
 let ``Builder should use a builder sprite`` () =
-    let transform = {originTransform with position = pp 10 10}
+    let transform = {origin with position = pp 10 10}
     let (Renderer.Sprite(center, t)) = Renderer.draw textures transform Builder
     Assert.Equal(Renderer.mapToScreenTransform transform, center)
     Assert.Equal(textures.builder, t)
