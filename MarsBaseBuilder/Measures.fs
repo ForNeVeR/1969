@@ -13,28 +13,24 @@ type rad
 type deg
 
 [<Struct>]
-type PhysicalPoint = {
-    x : int<dm>
-    y : int<dm>
-}
+type PhysicalPoint = 
+    { x : int<dm>
+      y : int<dm> }
 
 [<Struct>]
-type PhysicalTransform = {
-    position : PhysicalPoint
-    rotation : float32<deg>
-}
+type PhysicalTransform = 
+    { position : PhysicalPoint
+      rotation : float32<deg> }
 
 [<Struct>]
-type ScreenPoint = {
-    x : int<px>
-    y : int<px>
-}
+type ScreenPoint = 
+    { x : int<px>
+      y : int<px> }
 
 [<Struct>]
-type ScreenTransform = {
-    position : ScreenPoint
-    rotation : float32<rad>
-}
+type ScreenTransform = 
+    { position : ScreenPoint
+      rotation : float32<rad> }
 
 let pp (x : int) (y : int) : PhysicalPoint = { x = x * 1<dm>; y = y * 1<dm> }
 let sp (x : int) (y : int) : ScreenPoint = { x = x * 1<px>; y = y * 1<px> }

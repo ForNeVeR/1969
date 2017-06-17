@@ -16,10 +16,8 @@ let internal mapToScreenPoint (p : PhysicalPoint) : ScreenPoint =
       y = 300<px> + (int p.y) * 1<px> }
 
 let internal mapToScreenTransform (t : PhysicalTransform) : ScreenTransform = 
-    {
-        position = mapToScreenPoint t.position
-        rotation = deg2rad t.rotation
-    }
+    { position = mapToScreenPoint t.position
+      rotation = deg2rad t.rotation }
 
 let internal offset x y (sp : ScreenPoint) =
     { sp with x = sp.x + x; y = sp.y + y }
