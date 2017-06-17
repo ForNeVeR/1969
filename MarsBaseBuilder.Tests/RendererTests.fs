@@ -21,9 +21,29 @@ let ``mapToScreenPoint maps zero to 400, 300`` () =
     Assert.Equal({ x = 400<px>; y = 300<px> }, Renderer.mapToScreenPoint (pp 0 0))
 
 [<Fact>]
+let ``mapToScreenTransform maps origin to position 400, 300`` () =
+    let expected : ScreenTransform = 
+        { position = { x = 400<px>; y = 300<px> }
+          rotation = 0.0f<rad> }
+    Assert.Equal(expected, Renderer.mapToScreenTransform origin)
+
+[<Fact>]
 let ``mapToScreenPoint maps as x + 400, y + 300`` () =
-    let p = pp 100 200
-    Assert.Equal({ x = 400<px>; y = 300<px> }, Renderer.mapToScreenPoint (pp 0 0))
+    let x = 100
+    let y = 200
+    Assert.Equal({ x = x * 1<px> + 400<px>; y = y * 1<px> + 300<px> }, Renderer.mapToScreenPoint (pp x y))
+
+[<Fact>]
+let ``mapToScreenTransform maps as x + 400, y + 300 and rotation from deg to rad`` () =
+    let x = 100
+    let y = 200
+    let rotDeg = deg 60.0f
+    let rotRad = pi/3.0f
+    let expected : ScreenTransform =
+        { position = { x = x * 1<px> + 400<px>; y = y * 1<px> + 300<px>}
+          rotation = rotRad }
+    let actual = {origin with position = pp x y; rotation = rotDeg}
+    Assert.Equal(expected, Renderer.mapToScreenTransform actual)
 
 [<Fact>]
 let ``offset should move the screen point`` () =

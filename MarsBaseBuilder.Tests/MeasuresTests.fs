@@ -15,3 +15,9 @@ let ``ScreenPoint parameters are proper after its' creation`` () =
     let p = sp 100 300
     let expected = { x = 100<px>; y = 300<px> }
     Assert.Equal(expected, p)
+
+[<Fact>]
+let ``Degrees to radians conversion works proper`` () =
+    let angleInDeg = deg 90.0f
+    let angleInRad = pi/2.0f
+    Assert.Equal(angleInRad, deg2rad angleInDeg)
