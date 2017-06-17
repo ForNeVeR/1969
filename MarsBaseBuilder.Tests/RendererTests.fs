@@ -36,15 +36,16 @@ let ``Background should be drawn always`` () =
 
 [<Fact>]
 let ``Base drawn radius is 5 px`` () =
-    let (Renderer.Rectangle(a, b)) = Renderer.draw textures (pp 5 5) Base
+    let transform = {originTransform with position = pp 5 5}
+    let (Renderer.Rectangle(a, b)) = Renderer.draw textures transform Base
     Assert.Equal(10<px>, b.x - a.x)
     Assert.Equal(10<px>, b.y - a.y)
 
 [<Fact>]
 let ``Builder should use a builder sprite`` () =
-    let pos = pp 10 10
-    let (Renderer.Sprite(center, t)) = Renderer.draw textures pos Builder
-    Assert.Equal(Renderer.mapToScreenPoint pos, center)
+    let transform = {originTransform with position = pp 10 10}
+    let (Renderer.Sprite(center, t)) = Renderer.draw textures transform Builder
+    Assert.Equal(Renderer.mapToScreenTransform transform, center)
     Assert.Equal(textures.builder, t)
     ()
 
@@ -72,9 +73,9 @@ let ``Rectangle drawing should be proxied to context`` () =
 [<Fact>]
 let ``Sprite drawing should be performed`` () =
     let context = mockDrawingContext()
-    let p = sp 5 5
+    let transform : ScreenTransform = { position = sp 5 5; rotation = rad 0.0f }
     let texture = mockTexture()
-    let commands = ResizeArray([| Renderer.Sprite(p, texture) |])
+    let commands = ResizeArray([| Renderer.Sprite(transform, texture) |])
 
     Renderer.apply context commands
-    Mock.Verify(<@ context.Texture(p, texture) @>, once)
+    Mock.Verify(<@ context.Texture(transform, texture) @>, once)

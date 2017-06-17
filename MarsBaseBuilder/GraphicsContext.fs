@@ -11,7 +11,7 @@ type IDrawingContext =
     inherit IDisposable
     abstract member Clear : Color -> unit
     abstract member Rectangle : ScreenPoint * ScreenPoint -> unit
-    abstract member Texture : ScreenPoint * Texture2D -> unit
+    abstract member Texture : ScreenTransform * Texture2D -> unit
 
 type IGraphicsContext =
     abstract member BeginDraw : unit -> IDrawingContext
@@ -23,7 +23,7 @@ type GraphicsContext(device : GraphicsDevice) =
         let t = new Texture2D(device, 1, 1)
         t.SetData([| blackColor |])
         t
-    
+
     interface IDisposable with
         member __.Dispose() =
             singlePixelTexture.Dispose()
@@ -40,7 +40,8 @@ type GraphicsContext(device : GraphicsDevice) =
               member __.Rectangle(a : ScreenPoint, b : ScreenPoint) : unit =
                   let position = Rectangle(int a.x, int a.y, int (b.x - a.x), int (b.y - a.y))
                   spriteBatch.Draw(singlePixelTexture, destinationRectangle = Nullable position)
-                  
-              member __.Texture(p : ScreenPoint, t : Texture2D) : unit =
-                  let v = Vector2(float32 p.x, float32 p.y)
-                  spriteBatch.Draw(t, Nullable v) }
+
+              member __.Texture(st : ScreenTransform, t : Texture2D) : unit =
+                  let v = Vector2(float32 st.position.x, float32 st.position.y)
+                  let rot = float32 st.rotation
+                  spriteBatch.Draw(t, position = Nullable v, rotation = rot) }

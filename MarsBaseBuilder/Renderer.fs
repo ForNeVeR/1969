@@ -6,24 +6,34 @@ open Microsoft.Xna.Framework.Graphics
 open MarsBaseBuilder.Measures
 open MarsBaseBuilder.Textures
 
-type DrawCommand = 
+type DrawCommand =
     | Background
     | Rectangle of a : ScreenPoint * b : ScreenPoint
-    | Sprite of center : ScreenPoint * texture : Texture2D
+    | Sprite of center : ScreenTransform * texture : Texture2D
 
 let internal mapToScreenPoint (p : PhysicalPoint) : ScreenPoint =
     { x = 400<px> + (int p.x) * 1<px>
       y = 300<px> + (int p.y) * 1<px> }
 
+let internal mapToScreenTransform (t : PhysicalTransform) : ScreenTransform = 
+    {
+        position = mapToScreenPoint t.position
+        rotation = deg2rad t.rotation
+    }
+
 let internal offset x y (sp : ScreenPoint) =
     { sp with x = sp.x + x; y = sp.y + y }
 
 let baseRadius = 5<px>
-let internal draw (textures : TextureContainer) (coords : PhysicalPoint) : GameUnit -> DrawCommand =
-    let pos = mapToScreenPoint coords
+let internal draw (textures : TextureContainer) (transform : PhysicalTransform) : GameUnit -> DrawCommand =
+    let screenTransform = mapToScreenTransform transform
     function
-    | Base -> Rectangle (offset (-baseRadius) (-baseRadius) pos, offset baseRadius baseRadius pos)
-    | Builder -> Sprite (pos, textures.builder)
+    | Base -> 
+        let topLeft = offset (-baseRadius) (-baseRadius) screenTransform.position
+        let rightBottom = offset baseRadius baseRadius screenTransform.position
+        Rectangle (topLeft, rightBottom)
+
+    | Builder -> Sprite (screenTransform, textures.builder)
 
 let commands (textures : TextureContainer) (state : GameLogic.GameState) : ResizeArray<DrawCommand> =
     let drawUnit = draw textures

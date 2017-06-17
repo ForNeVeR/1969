@@ -15,13 +15,14 @@ let gameMinute = GameTime(minute, minute)
 let ``New mission should include a Base`` () =
     let state = GameLogic.newMission
     Assert.True(Map.containsKey Base state.units)
-    Assert.Equal(pp 0 0, Map.find Base state.units)
+    Assert.Equal(originTransform, Map.find Base state.units)
 
 [<Fact>]
 let ``New mission should include a Builder`` () =
     let state = GameLogic.newMission
+    let transform = {originTransform with position = pp 30 30; rotation = deg 30.0f}
     Assert.True(Map.containsKey Builder state.units)
-    Assert.Equal(pp 30 30, Map.find Builder state.units)
+    Assert.Equal(transform, Map.find Builder state.units)
 
 [<Fact>]
 let ``Update should be callable`` () =
