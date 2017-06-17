@@ -8,7 +8,7 @@ type GameState = {
     units : Map<GameUnit, PhysicalTransform>
 }
 
-let units = [| 
+let private units = [| 
     Base, originTransform; 
     Builder, {originTransform with position = pp 30 30; rotation = deg 30.0f}
     |]
