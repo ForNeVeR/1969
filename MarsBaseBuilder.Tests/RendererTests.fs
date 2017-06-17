@@ -18,20 +18,20 @@ let private textures = { builder = mockTexture() }
 
 [<Fact>]
 let ``mapToScreenPoint maps zero to 400, 300`` () =
-    Assert.Equal({ x = 400<px>; y = 300<px> }, Renderer.mapToScreenPoint (pp 0 0))
+    Assert.Equal(sp 400 300, Renderer.mapToScreenPoint (pp 0 0))
 
 [<Fact>]
 let ``mapToScreenTransform maps origin to position 400, 300`` () =
     let expected : ScreenTransform = 
-        { position = { x = 400<px>; y = 300<px> }
-          rotation = 0.0f<rad> }
+        { position = sp 400 300
+          rotation = rad 0.0f }
     Assert.Equal(expected, Renderer.mapToScreenTransform origin)
 
 [<Fact>]
 let ``mapToScreenPoint maps as x + 400, y + 300`` () =
     let x = 100
     let y = 200
-    Assert.Equal({ x = x * 1<px> + 400<px>; y = y * 1<px> + 300<px> }, Renderer.mapToScreenPoint (pp x y))
+    Assert.Equal(sp (x + 400) (y + 300), Renderer.mapToScreenPoint (pp x y))
 
 [<Fact>]
 let ``mapToScreenTransform maps as x + 400, y + 300 and rotation from deg to rad`` () =
@@ -39,10 +39,13 @@ let ``mapToScreenTransform maps as x + 400, y + 300 and rotation from deg to rad
     let y = 200
     let rotDeg = deg 60.0f
     let rotRad = pi/3.0f
+
     let expected : ScreenTransform =
-        { position = { x = x * 1<px> + 400<px>; y = y * 1<px> + 300<px>}
+        { position = sp (x + 400) (y + 300)
           rotation = rotRad }
-    let actual = {origin with position = pp x y; rotation = rotDeg}
+    let actual : PhysicalTransform = 
+        { position = pp x y; 
+          rotation = rotDeg }
     Assert.Equal(expected, Renderer.mapToScreenTransform actual)
 
 [<Fact>]
@@ -56,14 +59,14 @@ let ``Background should be drawn always`` () =
 
 [<Fact>]
 let ``Base drawn radius is 5 px`` () =
-    let transform = {origin with position = pp 5 5}
+    let transform = { origin with position = pp 5 5 }
     let (Renderer.Rectangle(a, b)) = Renderer.draw textures transform Base
     Assert.Equal(10<px>, b.x - a.x)
     Assert.Equal(10<px>, b.y - a.y)
 
 [<Fact>]
 let ``Builder should use a builder sprite`` () =
-    let transform = {origin with position = pp 10 10}
+    let transform = { origin with position = pp 10 10 }
     let (Renderer.Sprite(center, t)) = Renderer.draw textures transform Builder
     Assert.Equal(Renderer.mapToScreenTransform transform, center)
     Assert.Equal(textures.builder, t)
