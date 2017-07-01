@@ -1,12 +1,13 @@
 ﻿namespace MarsBaseBuilder
 
 open System
+open System.IO
 
 open Microsoft.Xna.Framework
 
 open MarsBaseBuilder.Textures
 
-type MarsBaseBuilderGame() as this =
+type MarsBaseBuilderGame(resourceBasePath : string) as this =
     inherit Game()
 
     let graphicsContext = lazy (new GraphicsContext(this.GraphicsDevice))
@@ -15,9 +16,8 @@ type MarsBaseBuilderGame() as this =
     let mutable textures = Unchecked.defaultof<TextureContainer>
 
     override this.LoadContent() =
-        let content = this.Content
-        content.RootDirectory <- "resources"
-        textures <- Textures.load content
+        let resourceDirectory = Path.Combine(resourceBasePath, "resources")
+        textures <- Textures.load resourceDirectory this.GraphicsDevice
 
     override __.Draw(gameTime) =
         use draw = graphicsContext.Value.BeginDraw()

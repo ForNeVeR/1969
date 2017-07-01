@@ -19,8 +19,9 @@ Either use [Visual Studio][visual-studio] to open and build `MoonBaseBuilder.sln
 file, or invoke the following commands in developer console:
 
 ```console
-> nuget restore
-> msbuild
+$ nuget restore
+$ msbuild
+$ powershell scripts/deps-windows.ps1 # consult the script documentation, there're additional parameters
 ```
 
 ### Linux
@@ -31,6 +32,8 @@ You'll need [Mono][mono] and [NuGet][nuget] installed.
 $ nuget restore
 $ xbuild
 ```
+
+Also you should download [SDL2 dependencies][monogame-sdl] for your platform.
 
 #### NixOS
 
@@ -90,6 +93,7 @@ Attribution 4.0 International License][cc-by-license].
 [cc-by-license]: https://creativecommons.org/licenses/by/4.0/
 [imagemagick]: https://www.imagemagick.org/script/index.php
 [mono]: http://www.mono-project.com/
+[monogame-sdl]: https://github.com/MonoGame/MonoGame.Dependencies/tree/master/SDL
 [nuget]: https://www.nuget.org/
 [travis]: https://travis-ci.org/ForNeVeR/1969
 [visual-studio]: https://www.visualstudio.com/
