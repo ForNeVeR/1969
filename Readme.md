@@ -73,8 +73,12 @@ process the textures again, run the following command (requires
 [imagemagick][]):
 
 ```console
-$ magick convert textures/builder.svg -transparent white MarsBaseBuilder/resources/builder.png
+$ magick convert -background none textures/builder.svg MarsBaseBuilder/resources/builder.png
+$ magick convert -background none textures/cursor.svg MarsBaseBuilder/resources/cursor.png
 ```
+
+There's a script to do that on Windows; see `script/textures-windows.ps1` and
+don't forget to check its' parameters.
 
 License
 -------

@@ -6,8 +6,12 @@ open Microsoft.Xna.Framework.Graphics
 
 type TextureContainer = {
     builder : Texture2D
+    cursor : Texture2D
 }
     
 let load (path : string) (graphics : GraphicsDevice) : TextureContainer =
-    use builder = new FileStream(Path.Combine(path, "builder.png"), FileMode.Open)
-    { builder = Texture2D.FromStream(graphics, builder) }
+    let fromFile fileName =
+        use stream = new FileStream(Path.Combine(path, fileName), FileMode.Open)
+        Texture2D.FromStream(graphics, stream)
+    { builder = fromFile "builder.png"
+      cursor = fromFile "cursor.png" }

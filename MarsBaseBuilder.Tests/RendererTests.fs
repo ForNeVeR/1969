@@ -14,7 +14,8 @@ let private mockDrawingContext () =
         .SetupMethod(fun c -> <@ c.Texture @>).Returns(())
         .Create()
 let private mockTexture () = Mock<Texture2D>().Create()
-let private textures = { builder = mockTexture() }
+let private textures = { builder = mockTexture()
+                         cursor = mockTexture() }
 
 [<Fact>]
 let ``mapToScreenPoint maps zero to 400, 300`` () =
