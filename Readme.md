@@ -5,6 +5,8 @@
 
 In 1969, you control the robotic mining mission on Mars.
 
+![Game screenshot][screenshot]
+
 Documentation
 -------------
 
@@ -91,6 +93,8 @@ Attribution 4.0 International License][cc-by-license].
 
 [docs-game-design]: docs/game-design.md
 [license]: License.md
+
+[screenshot]: docs/screenshot.png
 
 [andivionian-status-classifier]: https://github.com/ForNeVeR/andivionian-status-classifier#status-zero-
 [appveyor]: https://ci.appveyor.com/project/ForNeVeR/1969/branch/master
