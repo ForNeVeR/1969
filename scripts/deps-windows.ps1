@@ -18,7 +18,7 @@ $ErrorActionPreference = 'Stop'
 $platform = if ($X64) { 'x64' } else { 'x86' }
 [string[]] $outputDirectory = if ($Configuration -eq 'Both') { @('Debug', 'Release') } else { @($Configuration) }
 
-$url = "https://github.com/MonoGame/MonoGame.Dependencies/blob/3aee602ea3dfa338edbf0f16b500cebd48c78da6/SDL/Windows/x64/SDL2.dll?raw=true"
+$url = "https://github.com/MonoGame/MonoGame.Dependencies/blob/3aee602ea3dfa338edbf0f16b500cebd48c78da6/SDL/Windows/$platform/SDL2.dll?raw=true"
 $response = Invoke-WebRequest -UseBasicParsing $url
 
 $outputDirectory | ForEach-Object {
