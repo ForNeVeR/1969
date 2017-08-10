@@ -71,7 +71,9 @@
     <Compile Include="Renderer.fs" />
     <Compile Include="MarsBaseBuilderGame.fs" />
     <Compile Include="Program.fs" />
-    <Content Include="MonoGame.Framework.dll.config" />
+    <EmbeddedResource Include="MonoGame.Framework.dll.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MonoGame.Framework">
