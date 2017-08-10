@@ -75,7 +75,7 @@ process the textures again, run the following command (requires
 [imagemagick][]):
 
 ```console
-$ magick convert -background none textures/builder.svg MarsBaseBuilder/resources/builder.png
+$ magick convert -depth 8 -background none textures/builder.svg MarsBaseBuilder/resources/builder.png
 $ magick convert -resize 32x32 -depth 8 -background none textures/cursor.svg MarsBaseBuilder/resources/cursor.png
 ```
 
