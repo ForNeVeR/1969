@@ -76,7 +76,7 @@ process the textures again, run the following command (requires
 
 ```console
 $ magick convert -background none textures/builder.svg MarsBaseBuilder/resources/builder.png
-$ magick convert -background none textures/cursor.svg MarsBaseBuilder/resources/cursor.png
+$ magick convert -depth 8 -background none textures/cursor.svg MarsBaseBuilder/resources/cursor.png
 ```
 
 There's a script to do that on Windows; see `script/textures-windows.ps1` and
