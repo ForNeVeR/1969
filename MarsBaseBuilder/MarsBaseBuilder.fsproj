@@ -58,7 +58,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Compile Include="AssemblyInfo.fs" />
-    <Content Include="resources\cursor.png" />
+    <Content Include="resources\cursor.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="App.config" />
     <Content Include="packages.config" />
     <Compile Include="GameUnit.fs" />
