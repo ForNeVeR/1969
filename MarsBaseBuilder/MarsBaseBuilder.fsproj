@@ -57,10 +57,8 @@
     <Content Include="resources\builder.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="resources\cursor.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Compile Include="AssemblyInfo.fs" />
+    <Content Include="resources\cursor.png" />
     <None Include="App.config" />
     <Content Include="packages.config" />
     <Compile Include="GameUnit.fs" />
