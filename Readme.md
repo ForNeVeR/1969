@@ -23,7 +23,7 @@ file, or invoke the following commands in developer console:
 ```console
 $ nuget restore
 $ msbuild
-$ powershell scripts/deps-windows.ps1 # consult the script documentation, there're additional parameters
+$ fsi scripts/deps-downloader.fsx win {Build_Type}(debug/release) # consult the script documentation, there're additional parameters
 ```
 
 ### Linux
@@ -33,6 +33,7 @@ You'll need [Mono][mono] and [NuGet][nuget] installed.
 ```console
 $ nuget restore
 $ xbuild
+$ fsi scripts/deps-downloader.fsx linux {Build_Type}(debug/release) # consult the script documentation, there're additional parameters
 ```
 
 Also you should download [SDL2 dependencies][monogame-sdl] for your platform.
@@ -49,6 +50,17 @@ $ xbuild
 ```
 
 Requires NixOS 16.09+.
+
+#### MacOS
+
+You'll need [Mono][mono] and [NuGet][nuget] installed.
+
+Either use [JetBrains Rider][jetbrains-rider] to open and build `MoonBaseBuilder.sln`
+file, then invoke the following commands console:
+
+```console
+$ fsi scripts/deps-downloader.fsx macOS {Build_Type}(debug/release) # consult the script documentation, there're additional parameters
+```
 
 Run
 ---
@@ -67,6 +79,15 @@ $ cd MarsBaseBuilder/bin/Debug
 $ mono ./MarsBaseBuilder.exe
 ```
 
+On MacOS:
+
+Use Rider's Run -> Run/Debug, or use console:
+
+```console
+$ cd MarsBaseBuilder/bin/Debug
+$ mono ./MarsBaseBuilder.exe
+```
+
 Textures
 --------
 
@@ -75,8 +96,8 @@ process the textures again, run the following command (requires
 [imagemagick][]):
 
 ```console
-$ magick convert -background none textures/builder.svg MarsBaseBuilder/resources/builder.png
-$ magick convert -background none textures/cursor.svg MarsBaseBuilder/resources/cursor.png
+$ magick convert -depth 8 -background none textures/builder.svg MarsBaseBuilder/resources/builder.png
+$ magick convert -resize 32x32 -depth 8 -background none textures/cursor.svg MarsBaseBuilder/resources/cursor.png
 ```
 
 There's a script to do that on Windows; see `script/textures-windows.ps1` and
@@ -105,6 +126,7 @@ Attribution 4.0 International License][cc-by-license].
 [nuget]: https://www.nuget.org/
 [travis]: https://travis-ci.org/ForNeVeR/1969
 [visual-studio]: https://www.visualstudio.com/
+[jetbrains-rider]: https://www.jetbrains.com/rider/
 [xunit]: https://xunit.github.io/
 
 [appveyor-status]: https://ci.appveyor.com/api/projects/status/n0bi5bm1uwd8irwh/branch/master?svg=true
