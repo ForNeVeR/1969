@@ -23,7 +23,7 @@ file, or invoke the following commands in developer console:
 ```console
 $ nuget restore
 $ msbuild
-$ fsi scripts/deps-downloader.fsx win {Build_Type}(debug/release) # consult the script documentation, there're additional parameters
+$ fsi scripts/deps-downloader.fsx win
 ```
 
 ### Linux
@@ -33,7 +33,7 @@ You'll need [Mono][mono] and [NuGet][nuget] installed.
 ```console
 $ nuget restore
 $ xbuild
-$ fsi scripts/deps-downloader.fsx linux {Build_Type}(debug/release) # consult the script documentation, there're additional parameters
+$ fsi scripts/deps-downloader.fsx linux
 ```
 
 Also you should download [SDL2 dependencies][monogame-sdl] for your platform.
@@ -55,11 +55,12 @@ Requires NixOS 16.09+.
 
 You'll need [Mono][mono] and [NuGet][nuget] installed.
 
-Either use [JetBrains Rider][jetbrains-rider] to open and build `MoonBaseBuilder.sln`
-file, then invoke the following commands console:
+Currently, we recommend to build the project using [JetBrains Rider][jetbrains-rider].
+Open and build `MoonBaseBuilder.sln` file,
+then invoke the following command in the terminal:
 
 ```console
-$ fsi scripts/deps-downloader.fsx macOS {Build_Type}(debug/release) # consult the script documentation, there're additional parameters
+$ fsi scripts/deps-downloader.fsx macOS
 ```
 
 Run
@@ -72,16 +73,7 @@ To run the game on Windows, execute the following commands:
 > .\MarsBaseBuilder.exe
 ```
 
-On Linux:
-
-```console
-$ cd MarsBaseBuilder/bin/Debug
-$ mono ./MarsBaseBuilder.exe
-```
-
-On MacOS:
-
-Use Rider's Run -> Run/Debug, or use console:
+On Linux or MacOS:
 
 ```console
 $ cd MarsBaseBuilder/bin/Debug
