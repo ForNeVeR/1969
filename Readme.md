@@ -51,7 +51,7 @@ $ xbuild
 
 Requires NixOS 16.09+.
 
-#### MacOS
+#### macOS
 
 You'll need [Mono][mono] and [NuGet][nuget] installed.
 
@@ -73,7 +73,7 @@ To run the game on Windows, execute the following commands:
 > .\MarsBaseBuilder.exe
 ```
 
-On Linux or MacOS:
+On Linux or macOS:
 
 ```console
 $ cd MarsBaseBuilder/bin/Debug
