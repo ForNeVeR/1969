@@ -113,12 +113,12 @@ Attribution 4.0 International License][cc-by-license].
 [appveyor]: https://ci.appveyor.com/project/ForNeVeR/1969/branch/master
 [cc-by-license]: https://creativecommons.org/licenses/by/4.0/
 [imagemagick]: https://www.imagemagick.org/script/index.php
+[jetbrains-rider]: https://www.jetbrains.com/rider/
 [mono]: http://www.mono-project.com/
 [monogame-sdl]: https://github.com/MonoGame/MonoGame.Dependencies/tree/master/SDL
 [nuget]: https://www.nuget.org/
 [travis]: https://travis-ci.org/ForNeVeR/1969
 [visual-studio]: https://www.visualstudio.com/
-[jetbrains-rider]: https://www.jetbrains.com/rider/
 [xunit]: https://xunit.github.io/
 
 [appveyor-status]: https://ci.appveyor.com/api/projects/status/n0bi5bm1uwd8irwh/branch/master?svg=true
