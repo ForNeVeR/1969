@@ -17,8 +17,9 @@ Build
 
 ### Windows
 
-Either use [Visual Studio][visual-studio] to open and build `MoonBaseBuilder.sln`
-file, or invoke the following commands in developer console:
+Either use [Visual Studio][visual-studio] to open and build
+`MoonBaseBuilder.sln` file, or invoke the following commands in developer
+console:
 
 ```console
 $ nuget restore
@@ -35,8 +36,6 @@ $ nuget restore
 $ xbuild
 $ fsi scripts/deps-downloader.fsx linux
 ```
-
-Also you should download [SDL2 dependencies][monogame-sdl] for your platform.
 
 #### NixOS
 
@@ -55,9 +54,9 @@ Requires NixOS 16.09+.
 
 You'll need [Mono][mono] and [NuGet][nuget] installed.
 
-Currently, we recommend to build the project using [JetBrains Rider][jetbrains-rider].
-Open and build `MoonBaseBuilder.sln` file,
-then invoke the following command in the terminal:
+Currently, we recommend to build the project using [JetBrains
+Rider][jetbrains-rider]. Open and build `MoonBaseBuilder.sln` file, then invoke
+the following command in the terminal:
 
 ```console
 $ fsi scripts/deps-downloader.fsx macOS
@@ -115,7 +114,6 @@ Attribution 4.0 International License][cc-by-license].
 [imagemagick]: https://www.imagemagick.org/script/index.php
 [jetbrains-rider]: https://www.jetbrains.com/rider/
 [mono]: http://www.mono-project.com/
-[monogame-sdl]: https://github.com/MonoGame/MonoGame.Dependencies/tree/master/SDL
 [nuget]: https://www.nuget.org/
 [travis]: https://travis-ci.org/ForNeVeR/1969
 [visual-studio]: https://www.visualstudio.com/

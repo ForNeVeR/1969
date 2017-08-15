@@ -18,6 +18,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "MarsBaseBuilder.Tests", "MarsBaseBuilder.Tests\MarsBaseBuilder.Tests.fsproj", "{63D73C3C-918A-4917-A4D8-822BCF96FB7D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{1D07E654-8957-429B-AFE8-CEC437FBFCE1}"
+ProjectSection(SolutionItems) = preProject
+	scripts\deps-downloader.fsx = scripts\deps-downloader.fsx
+	scripts\textures-windows.ps1 = scripts\textures-windows.ps1
+EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,5 +41,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1D07E654-8957-429B-AFE8-CEC437FBFCE1} = {F5BEAB85-DC67-4D5C-BD97-1E75B740A102}
 	EndGlobalSection
 EndGlobal
