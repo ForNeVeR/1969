@@ -21,7 +21,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{1D07E654-8957-429B-AFE8-CEC437FBFCE1}"
 ProjectSection(SolutionItems) = preProject
 	scripts\deps-downloader.fsx = scripts\deps-downloader.fsx
-	scripts\textures-windows.ps1 = scripts\textures-windows.ps1
 EndProjectSection
 EndProject
 Global

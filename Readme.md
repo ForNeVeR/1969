@@ -79,21 +79,6 @@ $ cd MarsBaseBuilder/bin/Debug
 $ mono ./MarsBaseBuilder.exe
 ```
 
-Textures
---------
-
-There're processed textures in the game repository. Although, if you want to
-process the textures again, run the following command (requires
-[imagemagick][]):
-
-```console
-$ magick convert -depth 8 -background none textures/builder.svg MarsBaseBuilder/resources/builder.png
-$ magick convert -resize 32x32 -depth 8 -background none textures/cursor.svg MarsBaseBuilder/resources/cursor.png
-```
-
-There's a script to do that on Windows; see `script/textures-windows.ps1` and
-don't forget to check its' parameters.
-
 License
 -------
 
