@@ -3,5 +3,5 @@ mono: latest
 install:
     - nuget restore
 script:
-    - xbuild /p:Configuration=Release MarsBaseBuilder.sln
+    - msbuild /p:Configuration=Release MarsBaseBuilder.sln
     - mono ./packages/xunit.runner.console.2.2.0/tools/xunit.console.exe ./MarsBaseBuilder.Tests/bin/Release/MarsBaseBuilder.Tests.dll

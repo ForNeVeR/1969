@@ -33,7 +33,7 @@ You'll need [Mono][mono] and [NuGet][nuget] installed.
 
 ```console
 $ nuget restore
-$ xbuild
+$ msbuild
 $ fsi scripts/deps-downloader.fsx linux
 ```
 
@@ -45,7 +45,7 @@ following:
 ```console
 $ nix-shell
 $ nuget restore
-$ xbuild
+$ msbuild
 ```
 
 Requires NixOS 16.09+.
