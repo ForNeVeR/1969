@@ -96,7 +96,6 @@ Attribution 4.0 International License][cc-by-license].
 [andivionian-status-classifier]: https://github.com/ForNeVeR/andivionian-status-classifier#status-zero-
 [appveyor]: https://ci.appveyor.com/project/ForNeVeR/1969/branch/master
 [cc-by-license]: https://creativecommons.org/licenses/by/4.0/
-[imagemagick]: https://www.imagemagick.org/script/index.php
 [jetbrains-rider]: https://www.jetbrains.com/rider/
 [mono]: http://www.mono-project.com/
 [nuget]: https://www.nuget.org/
