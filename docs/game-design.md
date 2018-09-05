@@ -23,7 +23,7 @@ of Mars space. Game field contains various objects.
 - **Resource Gatherer**: an automated mining facility. Gathers resources, sends
   them back to the base using **Power Lines**.
 - **Power Lines** and **Power Nodes**: created by **Builders**, helps to
-  transfer resources around; required for **Builder** bo move.
+  transfer resources around; required for **Builder** to move.
 - **Resource Nodes**: infinite sources of power.
 - **Rough Terrain**: **Builders** can't pass this until it's terraformed.
 
